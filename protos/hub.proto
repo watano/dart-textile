@@ -1,0 +1,153 @@
+syntax = "proto3";
+package hub.pb;
+
+option java_multiple_files = true;
+option java_package = "io.textile.hub_grpc";
+option java_outer_classname = "TextileHub";
+option objc_class_prefix = "TXTL_HUB";
+
+message SignupRequest {
+    string username = 1;
+    string email = 2;
+}
+
+message SignupReply {
+    bytes key = 1;
+    string session = 2;
+}
+
+message SigninRequest {
+    string usernameOrEmail = 1;
+}
+
+message SigninReply {
+    bytes key = 1;
+    string session = 2;
+}
+
+message SignoutRequest {}
+
+message SignoutReply {}
+
+message GetSessionInfoRequest {}
+
+message GetSessionInfoReply {
+    bytes key = 1;
+    string username = 2;
+    string email = 3;
+}
+
+message CreateKeyRequest {
+    KeyType type = 1;
+}
+
+enum KeyType {
+    ACCOUNT = 0;
+    USER = 1;
+}
+
+message GetKeyReply {
+    string key = 1;
+    string secret = 2;
+    KeyType type = 3;
+    bool valid = 4;
+    int32 threads = 5;
+}
+
+message InvalidateKeyRequest {
+    string key = 1;
+}
+
+message InvalidateKeyReply {}
+
+message ListKeysRequest {}
+
+message ListKeysReply {
+    repeated GetKeyReply list = 1;
+}
+
+message CreateOrgRequest {
+    string name = 1;
+}
+
+message GetOrgRequest {}
+
+message GetOrgReply {
+    bytes key = 1;
+    string name = 2;
+    string slug = 3;
+    string host = 4;
+    repeated Member members = 5;
+    int64 createdAt = 6;
+
+    message Member {
+        bytes key = 1;
+        string username = 2;
+        string role = 3;
+    }
+}
+
+message ListOrgsRequest {}
+
+message ListOrgsReply {
+    repeated GetOrgReply list = 1;
+}
+
+message RemoveOrgRequest {}
+
+message RemoveOrgReply {}
+
+message InviteToOrgRequest {
+    string email = 1;
+}
+
+message InviteToOrgReply {
+    string token = 1;
+}
+
+message LeaveOrgRequest {}
+
+message LeaveOrgReply {}
+
+message IsUsernameAvailableRequest {
+    string username = 1;
+}
+
+message IsUsernameAvailableReply {}
+
+message IsOrgNameAvailableRequest {
+    string name = 1;
+}
+
+message IsOrgNameAvailableReply {
+    string slug = 1;
+    string host = 2;
+}
+
+message DestroyAccountRequest {}
+
+message DestroyAccountReply {}
+
+service API {
+    rpc Signup(SignupRequest) returns (SignupReply) {}
+    rpc Signin(SigninRequest) returns (SigninReply) {}
+    rpc Signout(SignoutRequest) returns (SignoutReply) {}
+
+    rpc GetSessionInfo(GetSessionInfoRequest) returns (GetSessionInfoReply) {}
+
+    rpc CreateKey(CreateKeyRequest) returns (GetKeyReply) {}
+    rpc ListKeys(ListKeysRequest) returns (ListKeysReply) {}
+    rpc InvalidateKey(InvalidateKeyRequest) returns (InvalidateKeyReply) {}
+
+    rpc CreateOrg(CreateOrgRequest) returns (GetOrgReply) {}
+    rpc GetOrg(GetOrgRequest) returns (GetOrgReply) {}
+    rpc ListOrgs(ListOrgsRequest) returns (ListOrgsReply) {}
+    rpc RemoveOrg(RemoveOrgRequest) returns (RemoveOrgReply) {}
+    rpc InviteToOrg(InviteToOrgRequest) returns (InviteToOrgReply) {}
+    rpc LeaveOrg(LeaveOrgRequest) returns (LeaveOrgReply) {}
+
+    rpc IsUsernameAvailable(IsUsernameAvailableRequest) returns (IsUsernameAvailableReply) {}
+    rpc IsOrgNameAvailable(IsOrgNameAvailableRequest) returns (IsOrgNameAvailableReply) {}
+
+    rpc DestroyAccount(DestroyAccountRequest) returns (DestroyAccountReply) {}
+}

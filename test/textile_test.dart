@@ -6,7 +6,7 @@ void main() async {
   textile.API api;
   final env = Platform.environment;
   setUpAll(() {
-    final token = env.containsKey('TXLT_TEST_TOKEN') && env['TXLT_TEST_TOKEN'] != '' ? env['TXLT_TEST_TOKEN'] : '';
+    final token = env['TXLT_TEST_TOKEN'] ?? '';
     final dev = false; //token == '' ? true : false;
     api = textile.API(
       token,
@@ -18,7 +18,7 @@ void main() async {
     await api.shutdown();
   });
   test('Create & start a new data store', () async {
-    final storeId = await api.threadsClient.newStore();
-    expect(storeId.length, 36);
+    final dbId = 'bafk7ayo2xuuafgx6ubbcn2lro3s7oixgujdda6shv41';
+    await api.threadsClient.newDB(dbId);
   });
 }

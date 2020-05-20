@@ -1,0 +1,1093 @@
+{
+  "files": [
+    {
+      "name": "hub.proto",
+      "description": "",
+      "package": "hub.pb",
+      "hasEnums": true,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [
+        {
+          "name": "KeyType",
+          "longName": "KeyType",
+          "fullName": "hub.pb.KeyType",
+          "description": "",
+          "values": [
+            {
+              "name": "ACCOUNT",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "USER",
+              "number": "1",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "CreateKeyRequest",
+          "longName": "CreateKeyRequest",
+          "fullName": "hub.pb.CreateKeyRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "KeyType",
+              "longType": "KeyType",
+              "fullType": "hub.pb.KeyType",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CreateOrgRequest",
+          "longName": "CreateOrgRequest",
+          "fullName": "hub.pb.CreateOrgRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DestroyAccountReply",
+          "longName": "DestroyAccountReply",
+          "fullName": "hub.pb.DestroyAccountReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "DestroyAccountRequest",
+          "longName": "DestroyAccountRequest",
+          "fullName": "hub.pb.DestroyAccountRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "GetKeyReply",
+          "longName": "GetKeyReply",
+          "fullName": "hub.pb.GetKeyReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "secret",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "type",
+              "description": "",
+              "label": "",
+              "type": "KeyType",
+              "longType": "KeyType",
+              "fullType": "hub.pb.KeyType",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "valid",
+              "description": "",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "threads",
+              "description": "",
+              "label": "",
+              "type": "int32",
+              "longType": "int32",
+              "fullType": "int32",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetOrgReply",
+          "longName": "GetOrgReply",
+          "fullName": "hub.pb.GetOrgReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "slug",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "host",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "members",
+              "description": "",
+              "label": "repeated",
+              "type": "Member",
+              "longType": "GetOrgReply.Member",
+              "fullType": "hub.pb.GetOrgReply.Member",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "createdAt",
+              "description": "",
+              "label": "",
+              "type": "int64",
+              "longType": "int64",
+              "fullType": "int64",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Member",
+          "longName": "GetOrgReply.Member",
+          "fullName": "hub.pb.GetOrgReply.Member",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "username",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "role",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetOrgRequest",
+          "longName": "GetOrgRequest",
+          "fullName": "hub.pb.GetOrgRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "GetSessionInfoReply",
+          "longName": "GetSessionInfoReply",
+          "fullName": "hub.pb.GetSessionInfoReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "username",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetSessionInfoRequest",
+          "longName": "GetSessionInfoRequest",
+          "fullName": "hub.pb.GetSessionInfoRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "InvalidateKeyReply",
+          "longName": "InvalidateKeyReply",
+          "fullName": "hub.pb.InvalidateKeyReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "InvalidateKeyRequest",
+          "longName": "InvalidateKeyRequest",
+          "fullName": "hub.pb.InvalidateKeyRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "InviteToOrgReply",
+          "longName": "InviteToOrgReply",
+          "fullName": "hub.pb.InviteToOrgReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "token",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "InviteToOrgRequest",
+          "longName": "InviteToOrgRequest",
+          "fullName": "hub.pb.InviteToOrgRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "email",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IsOrgNameAvailableReply",
+          "longName": "IsOrgNameAvailableReply",
+          "fullName": "hub.pb.IsOrgNameAvailableReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "slug",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "host",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IsOrgNameAvailableRequest",
+          "longName": "IsOrgNameAvailableRequest",
+          "fullName": "hub.pb.IsOrgNameAvailableRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IsUsernameAvailableReply",
+          "longName": "IsUsernameAvailableReply",
+          "fullName": "hub.pb.IsUsernameAvailableReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "IsUsernameAvailableRequest",
+          "longName": "IsUsernameAvailableRequest",
+          "fullName": "hub.pb.IsUsernameAvailableRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "username",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "LeaveOrgReply",
+          "longName": "LeaveOrgReply",
+          "fullName": "hub.pb.LeaveOrgReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "LeaveOrgRequest",
+          "longName": "LeaveOrgRequest",
+          "fullName": "hub.pb.LeaveOrgRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "ListKeysReply",
+          "longName": "ListKeysReply",
+          "fullName": "hub.pb.ListKeysReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "list",
+              "description": "",
+              "label": "repeated",
+              "type": "GetKeyReply",
+              "longType": "GetKeyReply",
+              "fullType": "hub.pb.GetKeyReply",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListKeysRequest",
+          "longName": "ListKeysRequest",
+          "fullName": "hub.pb.ListKeysRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "ListOrgsReply",
+          "longName": "ListOrgsReply",
+          "fullName": "hub.pb.ListOrgsReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "list",
+              "description": "",
+              "label": "repeated",
+              "type": "GetOrgReply",
+              "longType": "GetOrgReply",
+              "fullType": "hub.pb.GetOrgReply",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListOrgsRequest",
+          "longName": "ListOrgsRequest",
+          "fullName": "hub.pb.ListOrgsRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "RemoveOrgReply",
+          "longName": "RemoveOrgReply",
+          "fullName": "hub.pb.RemoveOrgReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "RemoveOrgRequest",
+          "longName": "RemoveOrgRequest",
+          "fullName": "hub.pb.RemoveOrgRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SigninReply",
+          "longName": "SigninReply",
+          "fullName": "hub.pb.SigninReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "session",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SigninRequest",
+          "longName": "SigninRequest",
+          "fullName": "hub.pb.SigninRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "usernameOrEmail",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SignoutReply",
+          "longName": "SignoutReply",
+          "fullName": "hub.pb.SignoutReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SignoutRequest",
+          "longName": "SignoutRequest",
+          "fullName": "hub.pb.SignoutRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SignupReply",
+          "longName": "SignupReply",
+          "fullName": "hub.pb.SignupReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "session",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SignupRequest",
+          "longName": "SignupRequest",
+          "fullName": "hub.pb.SignupRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "username",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "email",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "API",
+          "longName": "API",
+          "fullName": "hub.pb.API",
+          "description": "",
+          "methods": [
+            {
+              "name": "Signup",
+              "description": "",
+              "requestType": "SignupRequest",
+              "requestLongType": "SignupRequest",
+              "requestFullType": "hub.pb.SignupRequest",
+              "requestStreaming": false,
+              "responseType": "SignupReply",
+              "responseLongType": "SignupReply",
+              "responseFullType": "hub.pb.SignupReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Signin",
+              "description": "",
+              "requestType": "SigninRequest",
+              "requestLongType": "SigninRequest",
+              "requestFullType": "hub.pb.SigninRequest",
+              "requestStreaming": false,
+              "responseType": "SigninReply",
+              "responseLongType": "SigninReply",
+              "responseFullType": "hub.pb.SigninReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Signout",
+              "description": "",
+              "requestType": "SignoutRequest",
+              "requestLongType": "SignoutRequest",
+              "requestFullType": "hub.pb.SignoutRequest",
+              "requestStreaming": false,
+              "responseType": "SignoutReply",
+              "responseLongType": "SignoutReply",
+              "responseFullType": "hub.pb.SignoutReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetSessionInfo",
+              "description": "",
+              "requestType": "GetSessionInfoRequest",
+              "requestLongType": "GetSessionInfoRequest",
+              "requestFullType": "hub.pb.GetSessionInfoRequest",
+              "requestStreaming": false,
+              "responseType": "GetSessionInfoReply",
+              "responseLongType": "GetSessionInfoReply",
+              "responseFullType": "hub.pb.GetSessionInfoReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "CreateKey",
+              "description": "",
+              "requestType": "CreateKeyRequest",
+              "requestLongType": "CreateKeyRequest",
+              "requestFullType": "hub.pb.CreateKeyRequest",
+              "requestStreaming": false,
+              "responseType": "GetKeyReply",
+              "responseLongType": "GetKeyReply",
+              "responseFullType": "hub.pb.GetKeyReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "ListKeys",
+              "description": "",
+              "requestType": "ListKeysRequest",
+              "requestLongType": "ListKeysRequest",
+              "requestFullType": "hub.pb.ListKeysRequest",
+              "requestStreaming": false,
+              "responseType": "ListKeysReply",
+              "responseLongType": "ListKeysReply",
+              "responseFullType": "hub.pb.ListKeysReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "InvalidateKey",
+              "description": "",
+              "requestType": "InvalidateKeyRequest",
+              "requestLongType": "InvalidateKeyRequest",
+              "requestFullType": "hub.pb.InvalidateKeyRequest",
+              "requestStreaming": false,
+              "responseType": "InvalidateKeyReply",
+              "responseLongType": "InvalidateKeyReply",
+              "responseFullType": "hub.pb.InvalidateKeyReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "CreateOrg",
+              "description": "",
+              "requestType": "CreateOrgRequest",
+              "requestLongType": "CreateOrgRequest",
+              "requestFullType": "hub.pb.CreateOrgRequest",
+              "requestStreaming": false,
+              "responseType": "GetOrgReply",
+              "responseLongType": "GetOrgReply",
+              "responseFullType": "hub.pb.GetOrgReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetOrg",
+              "description": "",
+              "requestType": "GetOrgRequest",
+              "requestLongType": "GetOrgRequest",
+              "requestFullType": "hub.pb.GetOrgRequest",
+              "requestStreaming": false,
+              "responseType": "GetOrgReply",
+              "responseLongType": "GetOrgReply",
+              "responseFullType": "hub.pb.GetOrgReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "ListOrgs",
+              "description": "",
+              "requestType": "ListOrgsRequest",
+              "requestLongType": "ListOrgsRequest",
+              "requestFullType": "hub.pb.ListOrgsRequest",
+              "requestStreaming": false,
+              "responseType": "ListOrgsReply",
+              "responseLongType": "ListOrgsReply",
+              "responseFullType": "hub.pb.ListOrgsReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "RemoveOrg",
+              "description": "",
+              "requestType": "RemoveOrgRequest",
+              "requestLongType": "RemoveOrgRequest",
+              "requestFullType": "hub.pb.RemoveOrgRequest",
+              "requestStreaming": false,
+              "responseType": "RemoveOrgReply",
+              "responseLongType": "RemoveOrgReply",
+              "responseFullType": "hub.pb.RemoveOrgReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "InviteToOrg",
+              "description": "",
+              "requestType": "InviteToOrgRequest",
+              "requestLongType": "InviteToOrgRequest",
+              "requestFullType": "hub.pb.InviteToOrgRequest",
+              "requestStreaming": false,
+              "responseType": "InviteToOrgReply",
+              "responseLongType": "InviteToOrgReply",
+              "responseFullType": "hub.pb.InviteToOrgReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "LeaveOrg",
+              "description": "",
+              "requestType": "LeaveOrgRequest",
+              "requestLongType": "LeaveOrgRequest",
+              "requestFullType": "hub.pb.LeaveOrgRequest",
+              "requestStreaming": false,
+              "responseType": "LeaveOrgReply",
+              "responseLongType": "LeaveOrgReply",
+              "responseFullType": "hub.pb.LeaveOrgReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "IsUsernameAvailable",
+              "description": "",
+              "requestType": "IsUsernameAvailableRequest",
+              "requestLongType": "IsUsernameAvailableRequest",
+              "requestFullType": "hub.pb.IsUsernameAvailableRequest",
+              "requestStreaming": false,
+              "responseType": "IsUsernameAvailableReply",
+              "responseLongType": "IsUsernameAvailableReply",
+              "responseFullType": "hub.pb.IsUsernameAvailableReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "IsOrgNameAvailable",
+              "description": "",
+              "requestType": "IsOrgNameAvailableRequest",
+              "requestLongType": "IsOrgNameAvailableRequest",
+              "requestFullType": "hub.pb.IsOrgNameAvailableRequest",
+              "requestStreaming": false,
+              "responseType": "IsOrgNameAvailableReply",
+              "responseLongType": "IsOrgNameAvailableReply",
+              "responseFullType": "hub.pb.IsOrgNameAvailableReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "DestroyAccount",
+              "description": "",
+              "requestType": "DestroyAccountRequest",
+              "requestLongType": "DestroyAccountRequest",
+              "requestFullType": "hub.pb.DestroyAccountRequest",
+              "requestStreaming": false,
+              "responseType": "DestroyAccountReply",
+              "responseLongType": "DestroyAccountReply",
+              "responseFullType": "hub.pb.DestroyAccountReply",
+              "responseStreaming": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}

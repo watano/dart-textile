@@ -1,0 +1,1514 @@
+{
+  "files": [
+    {
+      "name": "threads.proto",
+      "description": "",
+      "package": "threads.pb",
+      "hasEnums": false,
+      "hasExtensions": false,
+      "hasMessages": true,
+      "hasServices": true,
+      "enums": [
+        {
+          "name": "Action",
+          "longName": "ListenReply.Action",
+          "fullName": "threads.pb.ListenReply.Action",
+          "description": "",
+          "values": [
+            {
+              "name": "CREATE",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "SAVE",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "DELETE",
+              "number": "2",
+              "description": ""
+            }
+          ]
+        },
+        {
+          "name": "Action",
+          "longName": "ListenRequest.Filter.Action",
+          "fullName": "threads.pb.ListenRequest.Filter.Action",
+          "description": "",
+          "values": [
+            {
+              "name": "ALL",
+              "number": "0",
+              "description": ""
+            },
+            {
+              "name": "CREATE",
+              "number": "1",
+              "description": ""
+            },
+            {
+              "name": "SAVE",
+              "number": "2",
+              "description": ""
+            },
+            {
+              "name": "DELETE",
+              "number": "3",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "extensions": [],
+      "messages": [
+        {
+          "name": "CollectionConfig",
+          "longName": "CollectionConfig",
+          "fullName": "threads.pb.CollectionConfig",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "name",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "schema",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "indexes",
+              "description": "",
+              "label": "repeated",
+              "type": "IndexConfig",
+              "longType": "CollectionConfig.IndexConfig",
+              "fullType": "threads.pb.CollectionConfig.IndexConfig",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "IndexConfig",
+          "longName": "CollectionConfig.IndexConfig",
+          "fullName": "threads.pb.CollectionConfig.IndexConfig",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "path",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "unique",
+              "description": "",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CreateReply",
+          "longName": "CreateReply",
+          "fullName": "threads.pb.CreateReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instanceIDs",
+              "description": "",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "CreateRequest",
+          "longName": "CreateRequest",
+          "fullName": "threads.pb.CreateRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instances",
+              "description": "",
+              "label": "repeated",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DeleteDBReply",
+          "longName": "DeleteDBReply",
+          "fullName": "threads.pb.DeleteDBReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "DeleteDBRequest",
+          "longName": "DeleteDBRequest",
+          "fullName": "threads.pb.DeleteDBRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "DeleteReply",
+          "longName": "DeleteReply",
+          "fullName": "threads.pb.DeleteReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "DeleteRequest",
+          "longName": "DeleteRequest",
+          "fullName": "threads.pb.DeleteRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instanceIDs",
+              "description": "",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FindByIDReply",
+          "longName": "FindByIDReply",
+          "fullName": "threads.pb.FindByIDReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instance",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FindByIDRequest",
+          "longName": "FindByIDRequest",
+          "fullName": "threads.pb.FindByIDRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instanceID",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FindReply",
+          "longName": "FindReply",
+          "fullName": "threads.pb.FindReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "instances",
+              "description": "",
+              "label": "repeated",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "FindRequest",
+          "longName": "FindRequest",
+          "fullName": "threads.pb.FindRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "queryJSON",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetDBInfoReply",
+          "longName": "GetDBInfoReply",
+          "fullName": "threads.pb.GetDBInfoReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "addrs",
+              "description": "",
+              "label": "repeated",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetDBInfoRequest",
+          "longName": "GetDBInfoRequest",
+          "fullName": "threads.pb.GetDBInfoRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetTokenReply",
+          "longName": "GetTokenReply",
+          "fullName": "threads.pb.GetTokenReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "challenge",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "token",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "GetTokenRequest",
+          "longName": "GetTokenRequest",
+          "fullName": "threads.pb.GetTokenRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "signature",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "HasReply",
+          "longName": "HasReply",
+          "fullName": "threads.pb.HasReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "exists",
+              "description": "",
+              "label": "",
+              "type": "bool",
+              "longType": "bool",
+              "fullType": "bool",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "HasRequest",
+          "longName": "HasRequest",
+          "fullName": "threads.pb.HasRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instanceIDs",
+              "description": "",
+              "label": "repeated",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListenReply",
+          "longName": "ListenReply",
+          "fullName": "threads.pb.ListenReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instanceID",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "action",
+              "description": "",
+              "label": "",
+              "type": "Action",
+              "longType": "ListenReply.Action",
+              "fullType": "threads.pb.ListenReply.Action",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instance",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ListenRequest",
+          "longName": "ListenRequest",
+          "fullName": "threads.pb.ListenRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "filters",
+              "description": "",
+              "label": "repeated",
+              "type": "Filter",
+              "longType": "ListenRequest.Filter",
+              "fullType": "threads.pb.ListenRequest.Filter",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "Filter",
+          "longName": "ListenRequest.Filter",
+          "fullName": "threads.pb.ListenRequest.Filter",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instanceID",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "action",
+              "description": "",
+              "label": "",
+              "type": "Action",
+              "longType": "ListenRequest.Filter.Action",
+              "fullType": "threads.pb.ListenRequest.Filter.Action",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NewCollectionReply",
+          "longName": "NewCollectionReply",
+          "fullName": "threads.pb.NewCollectionReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "NewCollectionRequest",
+          "longName": "NewCollectionRequest",
+          "fullName": "threads.pb.NewCollectionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "config",
+              "description": "",
+              "label": "",
+              "type": "CollectionConfig",
+              "longType": "CollectionConfig",
+              "fullType": "threads.pb.CollectionConfig",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NewDBFromAddrRequest",
+          "longName": "NewDBFromAddrRequest",
+          "fullName": "threads.pb.NewDBFromAddrRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "addr",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "key",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collections",
+              "description": "",
+              "label": "repeated",
+              "type": "CollectionConfig",
+              "longType": "CollectionConfig",
+              "fullType": "threads.pb.CollectionConfig",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "NewDBReply",
+          "longName": "NewDBReply",
+          "fullName": "threads.pb.NewDBReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "NewDBRequest",
+          "longName": "NewDBRequest",
+          "fullName": "threads.pb.NewDBRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collections",
+              "description": "",
+              "label": "repeated",
+              "type": "CollectionConfig",
+              "longType": "CollectionConfig",
+              "fullType": "threads.pb.CollectionConfig",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ReadTransactionReply",
+          "longName": "ReadTransactionReply",
+          "fullName": "threads.pb.ReadTransactionReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "hasReply",
+              "description": "",
+              "label": "",
+              "type": "HasReply",
+              "longType": "HasReply",
+              "fullType": "threads.pb.HasReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findReply",
+              "description": "",
+              "label": "",
+              "type": "FindReply",
+              "longType": "FindReply",
+              "fullType": "threads.pb.FindReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findByIDReply",
+              "description": "",
+              "label": "",
+              "type": "FindByIDReply",
+              "longType": "FindByIDReply",
+              "fullType": "threads.pb.FindByIDReply",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "ReadTransactionRequest",
+          "longName": "ReadTransactionRequest",
+          "fullName": "threads.pb.ReadTransactionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "startTransactionRequest",
+              "description": "",
+              "label": "",
+              "type": "StartTransactionRequest",
+              "longType": "StartTransactionRequest",
+              "fullType": "threads.pb.StartTransactionRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "hasRequest",
+              "description": "",
+              "label": "",
+              "type": "HasRequest",
+              "longType": "HasRequest",
+              "fullType": "threads.pb.HasRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findRequest",
+              "description": "",
+              "label": "",
+              "type": "FindRequest",
+              "longType": "FindRequest",
+              "fullType": "threads.pb.FindRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findByIDRequest",
+              "description": "",
+              "label": "",
+              "type": "FindByIDRequest",
+              "longType": "FindByIDRequest",
+              "fullType": "threads.pb.FindByIDRequest",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "SaveReply",
+          "longName": "SaveReply",
+          "fullName": "threads.pb.SaveReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": false,
+          "extensions": [],
+          "fields": []
+        },
+        {
+          "name": "SaveRequest",
+          "longName": "SaveRequest",
+          "fullName": "threads.pb.SaveRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "instances",
+              "description": "",
+              "label": "repeated",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "StartTransactionRequest",
+          "longName": "StartTransactionRequest",
+          "fullName": "threads.pb.StartTransactionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "dbID",
+              "description": "",
+              "label": "",
+              "type": "bytes",
+              "longType": "bytes",
+              "fullType": "bytes",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "collectionName",
+              "description": "",
+              "label": "",
+              "type": "string",
+              "longType": "string",
+              "fullType": "string",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "WriteTransactionReply",
+          "longName": "WriteTransactionReply",
+          "fullName": "threads.pb.WriteTransactionReply",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "createReply",
+              "description": "",
+              "label": "",
+              "type": "CreateReply",
+              "longType": "CreateReply",
+              "fullType": "threads.pb.CreateReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "saveReply",
+              "description": "",
+              "label": "",
+              "type": "SaveReply",
+              "longType": "SaveReply",
+              "fullType": "threads.pb.SaveReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "deleteReply",
+              "description": "",
+              "label": "",
+              "type": "DeleteReply",
+              "longType": "DeleteReply",
+              "fullType": "threads.pb.DeleteReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "hasReply",
+              "description": "",
+              "label": "",
+              "type": "HasReply",
+              "longType": "HasReply",
+              "fullType": "threads.pb.HasReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findReply",
+              "description": "",
+              "label": "",
+              "type": "FindReply",
+              "longType": "FindReply",
+              "fullType": "threads.pb.FindReply",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findByIDReply",
+              "description": "",
+              "label": "",
+              "type": "FindByIDReply",
+              "longType": "FindByIDReply",
+              "fullType": "threads.pb.FindByIDReply",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        },
+        {
+          "name": "WriteTransactionRequest",
+          "longName": "WriteTransactionRequest",
+          "fullName": "threads.pb.WriteTransactionRequest",
+          "description": "",
+          "hasExtensions": false,
+          "hasFields": true,
+          "extensions": [],
+          "fields": [
+            {
+              "name": "startTransactionRequest",
+              "description": "",
+              "label": "",
+              "type": "StartTransactionRequest",
+              "longType": "StartTransactionRequest",
+              "fullType": "threads.pb.StartTransactionRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "createRequest",
+              "description": "",
+              "label": "",
+              "type": "CreateRequest",
+              "longType": "CreateRequest",
+              "fullType": "threads.pb.CreateRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "saveRequest",
+              "description": "",
+              "label": "",
+              "type": "SaveRequest",
+              "longType": "SaveRequest",
+              "fullType": "threads.pb.SaveRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "deleteRequest",
+              "description": "",
+              "label": "",
+              "type": "DeleteRequest",
+              "longType": "DeleteRequest",
+              "fullType": "threads.pb.DeleteRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "hasRequest",
+              "description": "",
+              "label": "",
+              "type": "HasRequest",
+              "longType": "HasRequest",
+              "fullType": "threads.pb.HasRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findRequest",
+              "description": "",
+              "label": "",
+              "type": "FindRequest",
+              "longType": "FindRequest",
+              "fullType": "threads.pb.FindRequest",
+              "ismap": false,
+              "defaultValue": ""
+            },
+            {
+              "name": "findByIDRequest",
+              "description": "",
+              "label": "",
+              "type": "FindByIDRequest",
+              "longType": "FindByIDRequest",
+              "fullType": "threads.pb.FindByIDRequest",
+              "ismap": false,
+              "defaultValue": ""
+            }
+          ]
+        }
+      ],
+      "services": [
+        {
+          "name": "API",
+          "longName": "API",
+          "fullName": "threads.pb.API",
+          "description": "",
+          "methods": [
+            {
+              "name": "GetToken",
+              "description": "",
+              "requestType": "GetTokenRequest",
+              "requestLongType": "GetTokenRequest",
+              "requestFullType": "threads.pb.GetTokenRequest",
+              "requestStreaming": true,
+              "responseType": "GetTokenReply",
+              "responseLongType": "GetTokenReply",
+              "responseFullType": "threads.pb.GetTokenReply",
+              "responseStreaming": true
+            },
+            {
+              "name": "NewDB",
+              "description": "",
+              "requestType": "NewDBRequest",
+              "requestLongType": "NewDBRequest",
+              "requestFullType": "threads.pb.NewDBRequest",
+              "requestStreaming": false,
+              "responseType": "NewDBReply",
+              "responseLongType": "NewDBReply",
+              "responseFullType": "threads.pb.NewDBReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "NewDBFromAddr",
+              "description": "",
+              "requestType": "NewDBFromAddrRequest",
+              "requestLongType": "NewDBFromAddrRequest",
+              "requestFullType": "threads.pb.NewDBFromAddrRequest",
+              "requestStreaming": false,
+              "responseType": "NewDBReply",
+              "responseLongType": "NewDBReply",
+              "responseFullType": "threads.pb.NewDBReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "GetDBInfo",
+              "description": "",
+              "requestType": "GetDBInfoRequest",
+              "requestLongType": "GetDBInfoRequest",
+              "requestFullType": "threads.pb.GetDBInfoRequest",
+              "requestStreaming": false,
+              "responseType": "GetDBInfoReply",
+              "responseLongType": "GetDBInfoReply",
+              "responseFullType": "threads.pb.GetDBInfoReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "DeleteDB",
+              "description": "",
+              "requestType": "DeleteDBRequest",
+              "requestLongType": "DeleteDBRequest",
+              "requestFullType": "threads.pb.DeleteDBRequest",
+              "requestStreaming": false,
+              "responseType": "DeleteDBReply",
+              "responseLongType": "DeleteDBReply",
+              "responseFullType": "threads.pb.DeleteDBReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "NewCollection",
+              "description": "",
+              "requestType": "NewCollectionRequest",
+              "requestLongType": "NewCollectionRequest",
+              "requestFullType": "threads.pb.NewCollectionRequest",
+              "requestStreaming": false,
+              "responseType": "NewCollectionReply",
+              "responseLongType": "NewCollectionReply",
+              "responseFullType": "threads.pb.NewCollectionReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Create",
+              "description": "",
+              "requestType": "CreateRequest",
+              "requestLongType": "CreateRequest",
+              "requestFullType": "threads.pb.CreateRequest",
+              "requestStreaming": false,
+              "responseType": "CreateReply",
+              "responseLongType": "CreateReply",
+              "responseFullType": "threads.pb.CreateReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Save",
+              "description": "",
+              "requestType": "SaveRequest",
+              "requestLongType": "SaveRequest",
+              "requestFullType": "threads.pb.SaveRequest",
+              "requestStreaming": false,
+              "responseType": "SaveReply",
+              "responseLongType": "SaveReply",
+              "responseFullType": "threads.pb.SaveReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Delete",
+              "description": "",
+              "requestType": "DeleteRequest",
+              "requestLongType": "DeleteRequest",
+              "requestFullType": "threads.pb.DeleteRequest",
+              "requestStreaming": false,
+              "responseType": "DeleteReply",
+              "responseLongType": "DeleteReply",
+              "responseFullType": "threads.pb.DeleteReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Has",
+              "description": "",
+              "requestType": "HasRequest",
+              "requestLongType": "HasRequest",
+              "requestFullType": "threads.pb.HasRequest",
+              "requestStreaming": false,
+              "responseType": "HasReply",
+              "responseLongType": "HasReply",
+              "responseFullType": "threads.pb.HasReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "Find",
+              "description": "",
+              "requestType": "FindRequest",
+              "requestLongType": "FindRequest",
+              "requestFullType": "threads.pb.FindRequest",
+              "requestStreaming": false,
+              "responseType": "FindReply",
+              "responseLongType": "FindReply",
+              "responseFullType": "threads.pb.FindReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "FindByID",
+              "description": "",
+              "requestType": "FindByIDRequest",
+              "requestLongType": "FindByIDRequest",
+              "requestFullType": "threads.pb.FindByIDRequest",
+              "requestStreaming": false,
+              "responseType": "FindByIDReply",
+              "responseLongType": "FindByIDReply",
+              "responseFullType": "threads.pb.FindByIDReply",
+              "responseStreaming": false
+            },
+            {
+              "name": "ReadTransaction",
+              "description": "",
+              "requestType": "ReadTransactionRequest",
+              "requestLongType": "ReadTransactionRequest",
+              "requestFullType": "threads.pb.ReadTransactionRequest",
+              "requestStreaming": true,
+              "responseType": "ReadTransactionReply",
+              "responseLongType": "ReadTransactionReply",
+              "responseFullType": "threads.pb.ReadTransactionReply",
+              "responseStreaming": true
+            },
+            {
+              "name": "WriteTransaction",
+              "description": "",
+              "requestType": "WriteTransactionRequest",
+              "requestLongType": "WriteTransactionRequest",
+              "requestFullType": "threads.pb.WriteTransactionRequest",
+              "requestStreaming": true,
+              "responseType": "WriteTransactionReply",
+              "responseLongType": "WriteTransactionReply",
+              "responseFullType": "threads.pb.WriteTransactionReply",
+              "responseStreaming": true
+            },
+            {
+              "name": "Listen",
+              "description": "",
+              "requestType": "ListenRequest",
+              "requestLongType": "ListenRequest",
+              "requestFullType": "threads.pb.ListenRequest",
+              "requestStreaming": false,
+              "responseType": "ListenReply",
+              "responseLongType": "ListenReply",
+              "responseFullType": "threads.pb.ListenReply",
+              "responseStreaming": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "scalarValueTypes": [
+    {
+      "protoType": "double",
+      "notes": "",
+      "cppType": "double",
+      "csType": "double",
+      "goType": "float64",
+      "javaType": "double",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "float",
+      "notes": "",
+      "cppType": "float",
+      "csType": "float",
+      "goType": "float32",
+      "javaType": "float",
+      "phpType": "float",
+      "pythonType": "float",
+      "rubyType": "Float"
+    },
+    {
+      "protoType": "int32",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "int64",
+      "notes": "Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "uint32",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "uint64",
+      "notes": "Uses variable-length encoding.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint32",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sint64",
+      "notes": "Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "fixed32",
+      "notes": "Always four bytes. More efficient than uint32 if values are often greater than 2^28.",
+      "cppType": "uint32",
+      "csType": "uint",
+      "goType": "uint32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "fixed64",
+      "notes": "Always eight bytes. More efficient than uint64 if values are often greater than 2^56.",
+      "cppType": "uint64",
+      "csType": "ulong",
+      "goType": "uint64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "sfixed32",
+      "notes": "Always four bytes.",
+      "cppType": "int32",
+      "csType": "int",
+      "goType": "int32",
+      "javaType": "int",
+      "phpType": "integer",
+      "pythonType": "int",
+      "rubyType": "Bignum or Fixnum (as required)"
+    },
+    {
+      "protoType": "sfixed64",
+      "notes": "Always eight bytes.",
+      "cppType": "int64",
+      "csType": "long",
+      "goType": "int64",
+      "javaType": "long",
+      "phpType": "integer/string",
+      "pythonType": "int/long",
+      "rubyType": "Bignum"
+    },
+    {
+      "protoType": "bool",
+      "notes": "",
+      "cppType": "bool",
+      "csType": "bool",
+      "goType": "bool",
+      "javaType": "boolean",
+      "phpType": "boolean",
+      "pythonType": "boolean",
+      "rubyType": "TrueClass/FalseClass"
+    },
+    {
+      "protoType": "string",
+      "notes": "A string must always contain UTF-8 encoded or 7-bit ASCII text.",
+      "cppType": "string",
+      "csType": "string",
+      "goType": "string",
+      "javaType": "String",
+      "phpType": "string",
+      "pythonType": "str/unicode",
+      "rubyType": "String (UTF-8)"
+    },
+    {
+      "protoType": "bytes",
+      "notes": "May contain any arbitrary sequence of bytes.",
+      "cppType": "string",
+      "csType": "ByteString",
+      "goType": "[]byte",
+      "javaType": "ByteString",
+      "phpType": "string",
+      "pythonType": "str",
+      "rubyType": "String (ASCII-8BIT)"
+    }
+  ]
+}

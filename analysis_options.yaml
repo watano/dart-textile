@@ -1,7 +1,7 @@
 include: package:pedantic/analysis_options.yaml
 
 analyzer:
-  strong-mode: true
+  # strong-mode: true
   exclude: [lib/src/generated/**]
 linter:
   rules:

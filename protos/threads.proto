@@ -1,0 +1,216 @@
+syntax = "proto3";
+package threads.pb;
+
+option java_multiple_files = true;
+option java_package = "io.textile.threads_grpc";
+option java_outer_classname = "Threads";
+option objc_class_prefix = "THREADS";
+
+message GetTokenRequest {
+    oneof payload {
+        string key = 1;
+        bytes signature = 2;
+    }
+}
+
+message GetTokenReply {
+    oneof payload {
+        bytes challenge = 1;
+        string token = 2;
+    }
+}
+
+message NewDBRequest {
+    bytes dbID = 1;
+    repeated CollectionConfig collections = 2;
+}
+
+message NewDBFromAddrRequest {
+    bytes addr = 1;
+    bytes key = 2;
+    repeated CollectionConfig collections = 3;
+}
+
+message CollectionConfig {
+    string name = 1;
+    bytes schema = 2;
+    repeated IndexConfig indexes = 3;
+
+    message IndexConfig {
+        string path = 1;
+        bool unique = 2;
+    }
+}
+
+message NewDBReply {}
+
+message GetDBInfoRequest {
+    bytes dbID = 1;
+}
+
+message GetDBInfoReply {
+    repeated bytes addrs = 1;
+    bytes key = 2;
+}
+
+message DeleteDBRequest {
+    bytes dbID = 1;
+}
+
+message DeleteDBReply {}
+
+message NewCollectionRequest {
+    bytes dbID = 1;
+    CollectionConfig config = 2;
+}
+
+message NewCollectionReply {}
+
+message CreateRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    repeated bytes instances = 3;
+}
+
+message CreateReply {
+    repeated string instanceIDs = 1;
+}
+
+message SaveRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    repeated bytes instances = 3;
+}
+
+message SaveReply {}
+
+message DeleteRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    repeated string instanceIDs = 3;
+}
+
+message DeleteReply {}
+
+message HasRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    repeated string instanceIDs = 3;
+}
+
+message HasReply {
+    bool exists = 1;
+}
+
+message FindRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    bytes queryJSON = 3;
+}
+
+message FindReply {
+    repeated bytes instances = 1;
+}
+
+message FindByIDRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+    string instanceID = 3;
+}
+
+message FindByIDReply {
+    bytes instance = 1;
+}
+
+message StartTransactionRequest {
+    bytes dbID = 1;
+    string collectionName = 2;
+}
+
+message ReadTransactionRequest {
+    oneof option {
+        StartTransactionRequest startTransactionRequest = 1;
+        HasRequest hasRequest = 2;
+        FindRequest findRequest = 3;
+        FindByIDRequest findByIDRequest = 4;
+    }
+}
+
+message ReadTransactionReply {
+    oneof option {
+        HasReply hasReply = 1;
+        FindReply findReply = 2;
+        FindByIDReply findByIDReply = 3;
+    }
+}
+
+message WriteTransactionRequest {
+    oneof option {
+        StartTransactionRequest startTransactionRequest = 1;
+        CreateRequest createRequest = 2;
+        SaveRequest saveRequest = 3;
+        DeleteRequest deleteRequest = 4;
+        HasRequest hasRequest = 5;
+        FindRequest findRequest = 6;
+        FindByIDRequest findByIDRequest = 7;
+    }
+}
+
+message WriteTransactionReply {
+    oneof option {
+        CreateReply createReply = 1;
+        SaveReply saveReply = 2;
+        DeleteReply deleteReply = 3;
+        HasReply hasReply = 4;
+        FindReply findReply = 5;
+        FindByIDReply findByIDReply = 6;
+    }
+}
+
+message ListenRequest {
+    bytes dbID = 1;
+    repeated Filter filters = 2;
+
+    message Filter {
+        string collectionName = 1;
+        string instanceID = 2;
+        enum Action {
+            ALL = 0;
+            CREATE = 1;
+            SAVE = 2;
+            DELETE = 3;
+        }
+        Action action = 3;
+    }
+}
+
+message ListenReply {
+    string collectionName = 1;
+    string instanceID = 2;
+    Action action = 3;
+    bytes instance = 4;
+
+    enum Action {
+        CREATE = 0;
+        SAVE = 1;
+        DELETE = 2;
+    }
+}
+
+service API {
+    rpc GetToken(stream GetTokenRequest) returns (stream GetTokenReply) {}
+    rpc NewDB(NewDBRequest) returns (NewDBReply) {}
+    rpc NewDBFromAddr(NewDBFromAddrRequest) returns (NewDBReply) {}
+    rpc GetDBInfo(GetDBInfoRequest) returns (GetDBInfoReply) {}
+    rpc DeleteDB(DeleteDBRequest) returns (DeleteDBReply) {}
+    rpc NewCollection(NewCollectionRequest) returns (NewCollectionReply) {}
+    rpc Create(CreateRequest) returns (CreateReply) {}
+    rpc Save(SaveRequest) returns (SaveReply) {}
+    rpc Delete(DeleteRequest) returns (DeleteReply) {}
+    rpc Has(HasRequest) returns (HasReply) {}
+    rpc Find(FindRequest) returns (FindReply) {}
+    rpc FindByID(FindByIDRequest) returns (FindByIDReply) {}
+    rpc ReadTransaction(stream ReadTransactionRequest) returns (stream ReadTransactionReply) {}
+    rpc WriteTransaction(stream WriteTransactionRequest) returns (stream WriteTransactionReply) {}
+    rpc Listen(ListenRequest) returns (stream ListenReply) {}
+}

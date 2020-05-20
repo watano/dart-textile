@@ -1,0 +1,34 @@
+# https://taskfile.dev/#/
+version: '3'
+
+vars:
+
+tasks:
+  initAll:
+    desc: install all tools
+    cmds:
+      - pub global activate protoc_plugin
+      - pub upgrade
+      - curl -G -o ./protos/threads.proto https://raw.githubusercontent.com/textileio/go-threads/master/api/pb/api.proto
+      - curl -G -o ./protos/hub.proto     https://raw.githubusercontent.com/textileio/textile/master/api/hub/pb/hub.proto
+      - curl -G -o ./protos/buckets.proto https://raw.githubusercontent.com/textileio/textile/master/api/buckets/pb/buckets.proto
+      - curl -G -o ./protos/users.proto   https://raw.githubusercontent.com/textileio/textile/master/api/users/pb/users.proto
+  genAll:
+    desc: gen all dart codes from proto files
+    cmds:
+      - task: threads
+      - task: hubAPI
+  threads:
+    desc: gen go-threads dart api
+    cmds:
+      - 'protoc --dart_out=grpc:lib/src/generated -Iprotos threads.proto'
+      - 'protoc --doc_out=./protos --doc_opt=json,threads.json -Iprotos threads.proto'
+  hubAPI:
+    desc: gen hub dart api
+    cmds:
+      - 'protoc --dart_out=grpc:lib/src/generated -Iprotos hub.proto'
+      - 'protoc --doc_out=./protos --doc_opt=json,hub.json -Iprotos hub.proto'
+      - 'protoc --dart_out=grpc:lib/src/generated -Iprotos buckets.proto'
+      - 'protoc --doc_out=./protos --doc_opt=json,buckets.json -Iprotos buckets.proto'
+      - 'protoc --dart_out=grpc:lib/src/generated -Iprotos users.proto'
+      - 'protoc --doc_out=./protos --doc_opt=json,users.json -Iprotos users.proto'
